@@ -1,0 +1,30 @@
+<html>
+<header>
+    <title>Vue JS</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</header>
+
+<div id="card">
+    <header>{{title}}</header>
+    <ul>
+        <li v-for="car in cars">
+            <!--<button v-on:click="car.quantity += 1">{{car.quantity}}</button> {{car.name}}-->
+            <car-counter v-bind:name="car.name" 
+                         v-bind:initial-quantity="car.quantity"
+                         v-on:increment="incrementTotal"></car-counter>
+        </li>
+    </ul>
+    <p>Total cars: {{ total }}</p>
+</div>
+
+<script type="text/x-template" id="car-counter">
+    <div>
+        <button v-on:click="increment">{{quantity}}</button> {{name}}
+    </div>
+</script>
+
+<script src="https://unpkg.com/vue@2.3.3"></script>
+<script src="http://underscorejs.org/underscore.js"></script>
+<script src="app.js"></script>
+
+</html>
