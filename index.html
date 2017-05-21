@@ -9,11 +9,13 @@
     <ul>
         <li v-for="car in cars">
             <!--<button v-on:click="car.quantity += 1">{{car.quantity}}</button> {{car.name}}-->
-            <component v-bind:is="currentView"
-                       v-bind:name="car.name" 
-                       v-bind:initial-quantity="car.quantity"
-                       v-on:increment="incrementTotal"
-                       v-bind:engine="car.speed"></component>                    
+            <keep-alive>
+                <component v-bind:is="currentView"
+                        v-bind:name="car.name" 
+                        v-bind:initial-quantity="car.quantity"
+                        v-on:increment="incrementTotal"
+                        v-bind:engine="car.speed"></component>                    
+            </keep-alive>
         </li>
     </ul>
     <p>Total cars: {{ total }}</p>
