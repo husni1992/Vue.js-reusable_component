@@ -5,7 +5,7 @@
 </header>
 
 <div id="card">
-    <header>{{title}}</header>
+    <header>{{title}} <button class="btn btn-success" v-on:click="toggle">{{ toggleText }}</button></header>
     <ul>
         <li v-for="car in cars">
             <!--<button v-on:click="car.quantity += 1">{{car.quantity}}</button> {{car.name}}-->

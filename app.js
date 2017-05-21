@@ -32,10 +32,18 @@ var card = new Vue({
             { name: 'Volks Wagon', speed: 285, quantity: 2 }
         ],
         total: null
-    },    
+    },
     methods: {
         incrementTotal: function (amount) {
             this.total += amount;
+        },
+        toggle: function(){
+            this.currentView = this.currentView == 'car-show' ? 'car-counter': 'car-show'
+        }
+    },
+    computed: {
+        toggleText: function () {
+            return this.currentView == 'car-show' ? 'Edit' : 'Show'
         }
     },
     components: {
